@@ -3,7 +3,7 @@ from unittest import TestCase
 
 from datasize import DataSize
 
-from spider import DLSiteStaticInfoSpider
+from DLSiteSpider import DLSiteStaticInfoSpider
 
 
 class DLSiteStaticSpiderTestSpecial(TestCase):

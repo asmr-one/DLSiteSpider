@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from spider import DLSiteDynamicInfoSpider
+from DLSiteSpider import DLSiteDynamicInfoSpider
 
 
 class DLSiteDynamicSpiderTest(TestCase):

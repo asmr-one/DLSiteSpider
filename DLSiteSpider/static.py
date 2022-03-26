@@ -5,7 +5,7 @@ import requests
 from typing import List
 from bs4 import BeautifulSoup
 from datasize import DataSize
-from spider.utils import onException
+from DLSiteSpider.utils import onException
 import logging
 
 logger = logging.getLogger(__name__)
