@@ -1,0 +1,5 @@
+requests~=2.27.1
+beautifulsoup4~=4.10.0
+datasize~=1.0.0
+setuptools~=57.0.0
+lxml
