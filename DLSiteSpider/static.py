@@ -103,6 +103,7 @@ class DLSiteStaticInfoSpider:
         return vas
 
     @property
+    @onException(DataSize(0))
     def size(self) -> DataSize:
         work_outline = self.soup.select_one("#work_outline")
         size = work_outline.find("th", text="文件容量").parent.find("td").text

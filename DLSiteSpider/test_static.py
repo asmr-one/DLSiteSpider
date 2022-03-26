@@ -13,6 +13,12 @@ class DLSiteStaticSpiderTestSpecial(TestCase):
     def testRelease(self):
         self.assertEqual(datetime.date(year=2022, month=2, day=27), self.spider.release)
 
+    def testNoneExistWorkSize(self):
+        self.assertEqual(
+            DataSize(0),
+            DLSiteStaticInfoSpider("RJ211970").size
+        )
+
 
 class DLSiteStaticSpiderTest(TestCase):
     def setUp(self):
