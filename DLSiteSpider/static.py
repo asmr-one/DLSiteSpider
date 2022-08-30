@@ -22,16 +22,13 @@ class DLSiteStaticInfoSpider:
     _soup: BeautifulSoup = None
 
     @property
-    def less_static_info_url(self):
-        return self._static_info_url.format(product_id=self.product_id)
-
-    @property
     def static_info_url(self):
-        return self._static_info_url.format(product_id=self.product_id) + "?" + self.locale
+        return self._static_info_url.format(product_id=self.product_id)
 
     def _fetchPage(self):
         self._html = self.session.get(
-            self.static_info_url.format(product_id=self.product_id)
+            self.static_info_url.format(product_id=self.product_id),
+            cookies={"locale": "zh-cn"}
         ).text
 
     @property
@@ -51,7 +48,7 @@ class DLSiteStaticInfoSpider:
     @property
     def title(self) -> str:
         # work.title = $(`a[href="${url}"] span`).first().text();
-        return self.soup.find("a", href=self.less_static_info_url).find("span").text
+        return self.soup.find("a", href=self.static_info_url).find("span").text
 
     @property
     def release(self) -> datetime.date:

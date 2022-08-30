@@ -44,3 +44,11 @@ class DLSiteStaticSpiderTest(TestCase):
 
     def testSize(self):
         self.assertEqual(DataSize('19.63MB'), self.spider.size)
+
+    def testGirlSite(self):
+        """
+        测试乙女向版块解析能力
+        :return:
+        """
+        spider = DLSiteStaticInfoSpider("RJ377005")
+        self.assertEqual(DataSize('231.03MB'), spider.size)
